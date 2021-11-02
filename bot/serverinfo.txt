@@ -1,0 +1,7 @@
+Connect via terminal:
+    Use ssh:
+    ssh root@89.108.77.107
+Root password: 1234
+Change root password:
+    passwd root
+    Type sudo before if needed
