@@ -1,5 +1,6 @@
 import telebot
 import config
+import invest
 
 
 bot = telebot.TeleBot(config.TOKEN)
@@ -41,6 +42,12 @@ def command_menu(message):
     show_menu(message)
 
 
+@bot.message_handler(commads=['forceupdate'])
+def command_forceupdate():
+    invest.update_all()
+    invest.watermark_text_all()
+    
+
 @bot.message_handler(content_types=['text'])
 def chat(msg):
     if msg.chat.type == 'private':
@@ -56,6 +63,7 @@ def chat(msg):
             bot.send_message(msg.chat.id, 'Макропоказатели:')
         elif msg.text == 'XFL,SPX,US10YT':
             bot.send_message(msg.chat.id, 'XFL,SPX,US10YT:')
+            bot.send_photo(msg.chait.id, 'images/correlation_xfl_spx_to_us10yt.png')
         elif msg.text == 'Меню':
             show_menu(msg)
         else:
