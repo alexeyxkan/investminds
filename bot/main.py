@@ -63,7 +63,8 @@ def chat(msg):
             bot.send_message(msg.chat.id, 'Макропоказатели:')
         elif msg.text == 'XFL,SPX,US10YT':
             bot.send_message(msg.chat.id, 'XFL,SPX,US10YT:')
-            bot.send_photo(msg.chat.id, 'images/correlation_xfl_spx_to_us10yt.png')
+            photo = open('images/correlation_xfl_spx_to_us10yt.png', 'rb')
+            bot.send_photo(msg.chat.id, photo)
         elif msg.text == 'Меню':
             show_menu(msg)
         else:
