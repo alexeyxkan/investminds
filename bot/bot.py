@@ -21,13 +21,6 @@ def command_menu(message):
     markup.menu(message, bot)
 
 
-@bot.message_handler(commads=['forceupdate'])
-def command_forceupdate(message):
-    invest.update_all()
-    invest.watermark_text_all()
-    bot.send_message(message.chat.id, 'Updated')
-    
-
 @bot.message_handler(content_types=['text'])
 def chat(message):
     if message.chat.type == 'private':
@@ -45,13 +38,17 @@ def chat(message):
         elif message.text == 'Макропоказатели':
             bot.send_message(message.chat.id, 'Макропоказатели:')
 
-        elif message.text == ('Корреляция отношения Финансого сектора' + 
+        elif message.text == ('Корреляция отношения Финансого сектора ' + 
                               'к S&P 500 и ставки по 10-летним tresuries'):
             send.photo(bot, message, 'images/correlation_xfl_spx_to_us10yt.png')
-        elif message.text == ('Корреляция отношения меди' + 
+        elif message.text == ('Корреляция отношения меди ' + 
                               'к золоту и стаки по 10-летним tresuries'):
             send.photo(bot, message, 'images/correlation_copper_gold_to_us10yt.png')
             
+        elif message.text == '/forceupdate':
+            invest.update_all()
+            invest.watermark_text_all()
+            bot.send_message(message.chat.id, 'Updated')
         elif message.text == 'Главное меню':
             markup.menu(message, bot)
         else:
