@@ -13,7 +13,7 @@ def command_start(message):
     bot.send_message(message.chat.id, 'Hi!\n'
                                       'Welcome to the Invest minds bot!',
                      parse_mode='html')
-    bot.menu(message)
+    markup.menu(message)
 
 
 @bot.message_handler(commands=['menu'])
