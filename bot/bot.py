@@ -5,7 +5,7 @@ import invest
 import send
 
 
-bot = telebot.TeleBot(config.token)
+bot = telebot.TeleBot(config.TOKEN)
 
 
 @bot.message_handler(commands=['start'])
