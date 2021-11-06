@@ -25,5 +25,7 @@ def tools(message, bot):
 
 def stocks(message, bot):
     markup = get_keyboard(['Корреляция отношения Финансого сектора' 
-                         + 'к S&P 500 и ставки по 10-летним tresuries'])
+                         + 'к S&P 500 и ставки по 10-летним tresuries',
+                         'Корреляция отношения меди' + 
+                              'к золоту и стаки по 10-летним tresuries'])
     bot.send_message(message.chat.id, 'Меню акций:', reply_markup=markup)
