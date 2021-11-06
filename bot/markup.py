@@ -10,7 +10,7 @@ def get_keyboard(buttons):
 
 def menu(message, bot):
     markup = get_keyboard(['but1'])
-    bot.send_message(message.chat.id, 'Главное меню', markup=markup)
+    bot.send_message(message.chat.id, 'Главное меню', reply_markup=markup)
 
 
 def tools(message, bot):
