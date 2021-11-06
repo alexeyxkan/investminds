@@ -9,7 +9,8 @@ def get_keyboard(buttons):
 
 
 def menu(message, bot):
-    markup = get_keyboard(['but1'])
+    markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(telebot.types.KeyboardButton('but1'))
     bot.send_message(message.chat.id, 'Главное меню', reply_markup=markup)
 
 
