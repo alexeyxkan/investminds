@@ -24,19 +24,23 @@ def command_menu(message):
 @bot.message_handler(content_types=['text'])
 def chat(message):
     if message.chat.type == 'private':
-        if message.text == 'but1':
+        if message.text == 'Избранные корреляции':
+            markup.tools(message, bot)
+        if message.text == 'Популярные показатели':
+            markup.tools(message, bot)
+        if message.text == 'Сезонности':
+            markup.tools(message, bot)
+        if message.text == 'Конструктор':
             markup.tools(message, bot)
 
-        elif message.text == 'Акции':
+        elif message.text == 'Корреляции с treasuries':
             markup.stocks(message, bot)
-        elif message.text == 'Облигации':
+        elif message.text == 'Risk on/Risk off':
             bot.send_message(message.chat.id, 'Облигации:')
-        elif message.text == 'Commodities':
+        elif message.text == 'Схожие активы':
             bot.send_message(message.chat.id, 'Commodities')
-        elif message.text == 'FX':
+        elif message.text == 'Другие':
             bot.send_message(message.chat.id, 'FX:')
-        elif message.text == 'Макропоказатели':
-            bot.send_message(message.chat.id, 'Макропоказатели:')
 
         elif message.text == ('Корреляция отношения Финансого сектора ' + 
                               'к S&P 500 и ставки по 10-летним tresuries'):
