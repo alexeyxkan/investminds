@@ -38,3 +38,4 @@ def correlation_copper_gold_to_us10yt():
                      'Медь/Золото',
                      'United States 10-Year Bond Yield',
                      'images/correlation_copper_gold_to_us10yt.png')
+#лучший бот
